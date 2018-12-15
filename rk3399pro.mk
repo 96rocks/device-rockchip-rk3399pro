@@ -40,4 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.ota.host = www.rockchip.com:2300 \
     ro.sf.lcd_density=280
 
+# For 3G/4G modem dongle support
+BOARD_HAVE_DONGLE := true
+
 #PRODUCT_HAVE_OPTEE := true

@@ -27,9 +27,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     npu_powerctrl
 
-PRODUCT_PACKAGES += \
-    libDirectTexture
-
 #enable this for support f2fs with data partion
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
@@ -127,4 +124,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 ro.sf.lcd_density=280 \
                 ro.build.shutdown_timeout=6 \
 		persist.enable_task_snapshots=false \
-		npu.inactivity.sleep.secs=7
+		npu.inactivity.sleep.secs=7 \
+		ro.product.version = v1.0.1

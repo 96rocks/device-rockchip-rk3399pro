@@ -13,3 +13,10 @@ allow npu_transfer_proxy init:unix_stream_socket { connectto };
 allow npu_transfer_proxy npu_transfer_proxy:netlink_kobject_uevent_socket { setopt bind create read };
 allow npu_transfer_proxy sysfs_bus_usb:dir { open read search};
 allow npu_transfer_proxy sysfs_plat_usb:file { open read getattr };
+
+allow npu_transfer_proxy vendor_file:file { execute_no_trans };
+allow npu_transfer_proxy sysfs_class_gpio:file { open read write};
+allow npu_transfer_proxy debugfs_clk_wifi_pmu:file { open read write};
+allow npu_transfer_proxy sysfs_wake_lock:file { open read write};
+allow npu_transfer_proxy npu_transfer_proxy:capability { dac_override };
+allow npu_transfer_proxy npu_transfer_proxy:capability2 { block_suspend };

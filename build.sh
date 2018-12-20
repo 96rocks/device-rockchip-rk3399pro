@@ -45,7 +45,7 @@ DEVICE=`get_build_var TARGET_PRODUCT`
 BUILD_VARIANT=`get_build_var TARGET_BUILD_VARIANT`
 UBOOT_DEFCONFIG=rk3399pro_defconfig
 KERNEL_DEFCONFIG=rockchip_defconfig
-KERNEL_DTS=rk3399pro-evb-v10
+KERNEL_DTS=rk3399pro-evb-v11
 PACK_TOOL_DIR=RKTools/linux/Linux_Pack_Firmware
 IMAGE_PATH=rockdev/Image-$TARGET_PRODUCT
 export PROJECT_TOP=`gettop`
@@ -61,7 +61,7 @@ export STUB_PATCH_PATH=$STUB_PATH/PATCHES
 
 # build uboot
 echo "start build uboot"
-cd u-boot && make distclean && make $UBOOT_DEFCONFIG && ./mkv8.sh && cd -
+cd u-boot && make distclean && ./make.sh rk3399pro && cd -
 if [ $? -eq 0 ]; then
     echo "Build uboot ok!"
 else
@@ -133,7 +133,7 @@ mkdir -p $STUB_PATH
 
 #Generate patches
 
-.repo/repo/repo forall  -c '[ "$REPO_REMOTE" = "rk" ] && { REMOTE_DIFF=`git log $REPO_REMOTE/$REPO_RREV..HEAD`; LOCAL_DIFF=`git diff`; [ -n "$REMOTE_DIFF" ] && { mkdir -p $STUB_PATCH_PATH/$REPO_PATH/; git format-patch $REPO_REMOTE/$REPO_RREV..HEAD -o $STUB_PATCH_PATH/$REPO_PATH; git merge-base HEAD $REPO_REMOTE/$REPO_RREV | xargs git show -s > $STUB_PATCH_PATH/$REPO_PATH/git-merge-base.txt; } || :; [ -n "$LOCAL_DIFF" ] && { mkdir -p $STUB_PATCH_PATH/$REPO_PATH/; git reset HEAD ./; git diff > $STUB_PATCH_PATH/$REPO_PATH/local_diff.patch; } || :; }'
+#.repo/repo/repo forall  -c '[ "$REPO_REMOTE" = "rk" ] && { REMOTE_DIFF=`git log $REPO_REMOTE/$REPO_RREV..HEAD`; LOCAL_DIFF=`git diff`; [ -n "$REMOTE_DIFF" ] && { mkdir -p $STUB_PATCH_PATH/$REPO_PATH/; git format-patch $REPO_REMOTE/$REPO_RREV..HEAD -o $STUB_PATCH_PATH/$REPO_PATH; git merge-base HEAD $REPO_REMOTE/$REPO_RREV | xargs git show -s > $STUB_PATCH_PATH/$REPO_PATH/git-merge-base.txt; } || :; [ -n "$LOCAL_DIFF" ] && { mkdir -p $STUB_PATCH_PATH/$REPO_PATH/; git reset HEAD ./; git diff > $STUB_PATCH_PATH/$REPO_PATH/local_diff.patch; } || :; }'
 
 #Copy stubs
 cp commit_id.xml $STUB_PATH/manifest_${DATE}.xml

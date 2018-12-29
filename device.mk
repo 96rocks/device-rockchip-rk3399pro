@@ -105,6 +105,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 ro.rk.homepage_base=http://www.google.com/webhp?client={CID}&amp;source=android-home \
                 ro.rk.install_non_market_apps=false \
                 sys.hwc.compose_policy=6 \
+				sys.hwc.device.primary=HDMI-A \
+				sys.hwc.device.extend=eDP,DSI \
                 sys.wallpaper.rgb565=0 \
                 sf.power.control=2073600 \
                 sys.rkadb.root=0 \

@@ -1,0 +1,11 @@
+type npu_powerctrl, domain;
+type npu_powerctrl_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(npu_powerctrl)
+
+allow npu_powerctrl vendor_file:file { execute_no_trans };
+allow npu_powerctrl sysfs_class_gpio:file { open read write};
+allow npu_powerctrl debugfs_clk_wifi_pmu:file { open read write};
+allow npu_powerctrl sysfs_wake_lock:file { open read write};
+allow npu_powerctrl npu_powerctrl:capability { dac_override };
+allow npu_powerctrl npu_powerctrl:capability2 { block_suspend };
+

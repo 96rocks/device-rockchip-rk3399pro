@@ -76,7 +76,7 @@ fi
 
 # build kernel
 echo "Start build kernel"
-cd kernel && ./make.sh android ${BUILD_BOARD} && ./make.sh linux ${BUILD_BOARD} && cd -
+cd kernel && ./make.sh linux ${BUILD_BOARD} && ./make.sh android ${BUILD_BOARD} &&  cd -
 if [ $? -eq 0 ]; then
     echo "Build kernel ok!"
 else

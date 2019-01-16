@@ -16,7 +16,7 @@ BUILD_VERSION="IMAGES"
 BUILD_BOARD="prod"
 
 # check pass argument
-while getopts "ouv:" arg
+while getopts "ouvb:" arg
 do
     case $arg in
         o)

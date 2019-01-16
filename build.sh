@@ -6,6 +6,7 @@ usage()
     echo "WHERE: -o = generate ota package       "
     echo "       -u = generate update.img        "
     echo "       -v = set build version name for output image folder"
+    echo "       -b = set board : prop or prod"
     exit 1
 }
 

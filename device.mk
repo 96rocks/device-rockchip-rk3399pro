@@ -26,6 +26,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     npu_powerctrl
+PRODUCT_COPY_FILES += \
+    hardware/rockchip/npu_powerctrl/npu_powerctrl.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/npu_powerctrl.rc
 
 #enable this for support f2fs with data partion
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
@@ -105,8 +107,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 ro.rk.homepage_base=http://www.google.com/webhp?client={CID}&amp;source=android-home \
                 ro.rk.install_non_market_apps=false \
                 sys.hwc.compose_policy=6 \
-				sys.hwc.device.primary=HDMI-A \
-				sys.hwc.device.extend=eDP,DSI \
                 sys.wallpaper.rgb565=0 \
                 sf.power.control=2073600 \
                 sys.rkadb.root=0 \
@@ -126,5 +126,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 ro.sf.lcd_density=280 \
                 ro.build.shutdown_timeout=6 \
 		persist.enable_task_snapshots=false \
-		npu.inactivity.sleep.secs=300 \
-		ro.product.version = v1.0.1
+		npu.inactivity.sleep.secs=15 \
+		ro.product.version = v1.2.0

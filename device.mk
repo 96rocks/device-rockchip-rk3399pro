@@ -126,5 +126,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 ro.sf.lcd_density=280 \
                 ro.build.shutdown_timeout=6 \
 		persist.enable_task_snapshots=false \
-		npu.inactivity.sleep.secs=15 \
+		npu.inactivity.sleep.secs=300 \
 		ro.product.version = v1.2.0

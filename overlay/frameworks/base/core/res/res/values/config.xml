@@ -149,4 +149,7 @@
          so that applications can still use their own mechanisms. -->
 	<bool name="config_enableAutoPowerModes">true</bool>
 	<string translatable="false" name="config_ntpServer">asia.pool.ntp.org</string>
+
+    <!-- for dual eth default eth0 -->
+    <string translatable="false" name="config_ethernet_iface_regex">eth0</string>
 </resources>

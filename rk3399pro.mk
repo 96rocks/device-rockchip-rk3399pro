@@ -19,7 +19,7 @@ include device/rockchip/rk3399pro/BoardConfig.mk
 $(call inherit-product, device/rockchip/rk3399pro/device.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product-if-exists, vendor/opengapps/products/gms.mk)
-$(call inherit-product-if-exists, vendor/customize/customize.mk)
+$(call inherit-product-if-exists, vendor/customize/common/customize.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_SHIPPING_API_LEVEL :=26
